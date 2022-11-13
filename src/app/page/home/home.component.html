@@ -1,1 +1,12 @@
-<app-carousel></app-carousel>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-product-turn [products]="productsFeatured"></app-product-turn>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <app-product-list [products]="productsActive"></app-product-list>
+    </div>
+  </div>
+</div>
