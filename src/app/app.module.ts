@@ -7,6 +7,14 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { Cat01Component } from './page/cat01/cat01.component';
 import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
+import { ProductCardComponent } from './common/product-card/product-card.component';
+import { ProductFilterPipe } from './pipes/productfilter.pipe';
+import { ProductTurnComponent } from './common/product-turn/product-turn.component';
+import { ProductListComponent } from './common/product-list/product-list.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { Cat03Component } from './page/cat03/cat03.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +22,19 @@ import { HomeComponent } from './page/home/home.component';
     NavigationComponent,
     Cat01Component,
     Cat02Component,
-    HomeComponent
+    HomeComponent,
+    ProductCardComponent,
+    ProductFilterPipe,
+    ProductTurnComponent,
+    ProductListComponent,
+    FilterPipe,
+    ShortenPipe,
+    Cat03Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

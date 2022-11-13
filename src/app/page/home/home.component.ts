@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productservice: ProductService) { }
+
+  productsFeatured = this.productservice.getProducts().filter(product=> product.featured === true).sort(() => Math.random() - 0.5).slice(0,5);
+
+  productsActive = this.productservice.getProducts().filter(product=> product.active === true).sort(() => Math.random() - 0.5).slice(0,5);
 
   ngOnInit(): void {
   }
