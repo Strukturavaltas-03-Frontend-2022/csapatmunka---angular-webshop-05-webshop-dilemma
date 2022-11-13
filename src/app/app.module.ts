@@ -13,6 +13,8 @@ import { ProductTurnComponent } from './common/product-turn/product-turn.compone
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { Cat03Component } from './page/cat03/cat03.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     ProductFilterPipe,
     ProductTurnComponent,
     ProductListComponent,
-    FilterPipe
+    FilterPipe,
+    ShortenPipe,
+    Cat03Component
   ],
   imports: [
     BrowserModule,

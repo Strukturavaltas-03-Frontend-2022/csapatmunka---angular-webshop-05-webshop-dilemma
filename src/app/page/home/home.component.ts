@@ -10,9 +10,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private productservice: ProductService) { }
 
-  productsFeatured = this.productservice.getProducts().filter(product=> product.featured === true).sort(() => Math.random() - 0.5);
+  productsFeatured = this.productservice.getProducts().filter(product=> product.featured === true).sort(() => Math.random() - 0.5).slice(0,5);
 
-  productsActive = this.productservice.getProducts().filter(product=> product.active === true).sort(() => Math.random() - 0.5);
+  productsActive = this.productservice.getProducts().filter(product=> product.active === true).sort(() => Math.random() - 0.5).slice(0,5);
 
   ngOnInit(): void {
   }

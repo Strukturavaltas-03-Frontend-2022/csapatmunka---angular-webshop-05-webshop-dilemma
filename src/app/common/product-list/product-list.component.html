@@ -9,6 +9,6 @@
   <div class="row">
     <div class="col-12">
       <div class="card-group">
-       <app-product-card [product]="item" *ngFor="let item of products | filter:filterPhrase:'name' " ></app-product-card>
+       <app-product-card class="mb-5" [product]="item" *ngFor="let item of products | filter:filterPhrase:'name' " ></app-product-card>
       </div>
     </div>

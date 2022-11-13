@@ -14,7 +14,7 @@ export class ProductTurnComponent implements OnInit {
   @Input() products: Product[] = []
 
   ngOnInit(): void {
-    this.products.length = 5
+
   }
 
 }
