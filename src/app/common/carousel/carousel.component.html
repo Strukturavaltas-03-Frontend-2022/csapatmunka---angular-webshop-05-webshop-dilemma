@@ -1,0 +1,15 @@
+<div class="carousel d-flex align-items-center">
+  <div class="carousel__btn d-flex justify-content-center">
+    <button type="button" (click)="pager()"><</button>
+  </div>
+  <div class="carousel__cards">
+    <div class="carousel__cards_wrapper d-flex">
+      <ng-container *ngFor="let book of books">
+        <div class="carousel__card d-flex">{{ book.id }}</div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="carousel__btn d-flex justify-content-center">
+    <button type="button" (click)="pager(true)">></button>
+  </div>
+</div>
