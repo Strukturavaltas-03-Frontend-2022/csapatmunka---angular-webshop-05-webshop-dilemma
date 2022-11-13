@@ -1,15 +1,16 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { debounceTime, fromEvent, tap } from 'rxjs';
+import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { debounceTime, fromEvent, Subscription, tap } from 'rxjs';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit, AfterViewInit {
+export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() books: any[] = [];
 
+  private resizeSubscription: Subscription | undefined;
   private maxPage = 0;
   private currPage = 0;
   private screen = {
@@ -53,7 +54,6 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   private offset = 0;
   private offsetVarName = '--carousel-offset:';
 
-
   constructor() {
     this.screenSize = this.getScreenSize();
     this.init(this.screenSize);
@@ -63,15 +63,23 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     for (let i = 1; i < 24; i++) {
       this.books.push({ id: i });
     }
-    this.maxPage = Math.ceil(this.books.length / this.cardNum) - 1;
+    this.setMaxPage();
 
-    fromEvent(window, 'resize').pipe(
+    this.resizeSubscription = fromEvent(window, 'resize').pipe(
       debounceTime(100),
       tap(() => {
         const currScreenSize = this.getScreenSize();
-        if(currScreenSize !== this.screenSize) {
-          this.screenSize = currScreenSize;
+        if (currScreenSize !== this.screenSize) {
+          const nextCardNum = this.screen[currScreenSize].cardNum;
+          const nextOffset = this.screen[currScreenSize].pageOffset;
+          // order is important: the old value of cardNum used here
+          this.currPage = Math.ceil((this.currPage * this.cardNum + 1) / nextCardNum - 1);
+          // order is important: reassigning the value of cardNum
           this.init(currScreenSize);
+          this.setMaxPage();
+          // order is important: the calcPartialPageOffset function must use the new maxPage value
+          this.offset = (nextOffset * (this.currPage - 1) + this.calcPartialPageOffset(nextOffset, true)) * -1;
+          this.screenSize = currScreenSize;
           const carouselEl = this.getCarouselEl();
           carouselEl.style.cssText = this.getCssText();
         }
@@ -84,6 +92,10 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     (carouselEl as HTMLElement).style.cssText = this.getCssText();
   }
 
+  ngOnDestroy() {
+    this.resizeSubscription?.unsubscribe();
+  }
+
   pager(next?: boolean) {
     if (next && (this.currPage !== this.maxPage)) {
       this.currPage++;
@@ -94,18 +106,25 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     };
   }
 
-  turnPage(next?: boolean) {
-    let pageOffset = this.pageOffset;
-    const lastPageCards = this.books.length % this.cardNum;
-    if (lastPageCards > 0 && ((next && this.currPage === this.maxPage) || (!next && this.currPage === this.maxPage - 1))) {
-      pageOffset = (pageOffset / this.cardNum) * (this.books.length % this.cardNum);
-    }
+  private turnPage(next?: boolean) {
+    let partialPageOffset = this.calcPartialPageOffset(this.pageOffset, next);
     const carouselEl = this.getCarouselEl();
     const carouselCssVars = carouselEl.style.cssText.split(';');
     let carouselOffset = carouselCssVars[5].replace('--carousel-offset:', '');
     carouselOffset = carouselOffset.replace('%', '');
-    this.offset = Number(carouselOffset) + Number(`${next ? '-' : ''}1`) * pageOffset;
+    this.offset = Number(carouselOffset) + Number(`${next ? '-' : ''}1`) * partialPageOffset;
     carouselEl.style.cssText = this.getCssText();
+  }
+
+  private calcPartialPageOffset(pageOffset: number, next?: boolean) {
+    let partialPageOffset = pageOffset;
+    const lastPageCards = this.books.length % this.cardNum;
+
+    if (lastPageCards > 0 && ((next && this.currPage === this.maxPage) || (!next && this.currPage === this.maxPage - 1))) {
+      partialPageOffset = (partialPageOffset / this.cardNum) * (this.books.length % this.cardNum);
+    }
+
+    return partialPageOffset;
   }
 
   private getCarouselEl() {
@@ -138,5 +157,9 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.cardNum = this.screen[screenSize].cardNum;
     this.cardGap = this.screen[screenSize].cardGap;
     this.pageOffset = this.screen[screenSize].pageOffset;
+  }
+
+  private setMaxPage() {
+    this.maxPage = Math.ceil(this.books.length / this.cardNum) - 1;
   }
 }
