@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { Cat03Component } from './page/cat03/cat03.component';
 import { CarouselComponent } from './common/carousel/carousel.component';
+import { ProductDetailComponent } from './common/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CarouselComponent } from './common/carousel/carousel.component';
     ShortenPipe,
     Cat03Component,
     CarouselComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

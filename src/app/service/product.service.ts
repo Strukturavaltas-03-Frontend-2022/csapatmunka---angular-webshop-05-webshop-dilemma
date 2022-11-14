@@ -612,5 +612,9 @@ getProducts(): Product[] {
   return this.list;
 }
 
+/* getOne(id: number): Product |{
+  return this.list.find(product => product.id === id)
+} */
+
   constructor() { }
 }
