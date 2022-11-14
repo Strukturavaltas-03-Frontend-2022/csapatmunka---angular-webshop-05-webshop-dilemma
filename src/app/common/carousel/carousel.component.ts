@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { debounceTime, fromEvent, Subscription, tap } from 'rxjs';
 
+let instanceConter = 0;
+
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -10,6 +12,8 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() books: any[] = [];
 
+  public instance = ++instanceConter;
+  public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-1'}
   private resizeSubscription: Subscription | undefined;
   private maxPage = 0;
   private currPage = 0;
@@ -60,9 +64,9 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    for (let i = 1; i < 24; i++) {
+    /* for (let i = 1; i < 24; i++) {
       this.books.push({ id: i });
-    }
+    } */
     this.setMaxPage();
 
     this.resizeSubscription = fromEvent(window, 'resize').pipe(
@@ -88,8 +92,8 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    const carouselEl = document.querySelector('.carousel');
-    (carouselEl as HTMLElement).style.cssText = this.getCssText();
+    const carouselEl = this.getCarouselEl();
+    carouselEl.style.cssText = this.getCssText();
   }
 
   ngOnDestroy() {
@@ -128,7 +132,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private getCarouselEl() {
-    const carouselEl = document.querySelector('.carousel');
+    const carouselEl = document.querySelector(`#carousel-${this.instance}`);
 
     return (carouselEl as HTMLElement);
   }

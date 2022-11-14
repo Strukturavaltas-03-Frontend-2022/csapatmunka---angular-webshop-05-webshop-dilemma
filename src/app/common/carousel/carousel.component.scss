@@ -8,8 +8,6 @@
   }
 
   &__card {
-    border: grey solid 2px;
-    height: 40vh;
     min-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
     max-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
 

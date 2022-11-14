@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
-import { ConfigService } from 'src/app/service/config.service';
-import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-product-card',
@@ -10,7 +8,8 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() product: Product = new Product()
+  @Input() product: Product = new Product();
+  @Input() cssClasses: { [key: string]: any } = {};
 
   constructor() { }
 

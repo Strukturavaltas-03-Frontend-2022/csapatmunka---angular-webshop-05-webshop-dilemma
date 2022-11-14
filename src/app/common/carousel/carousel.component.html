@@ -1,11 +1,13 @@
-<div class="carousel d-flex align-items-center">
+<div [id]="'carousel-' + instance" class="carousel d-flex align-items-center">
   <div class="carousel__btn d-flex justify-content-center">
     <button type="button" (click)="pager()"><</button>
   </div>
   <div class="carousel__cards">
     <div class="carousel__cards_wrapper d-flex">
       <ng-container *ngFor="let book of books">
-        <div class="carousel__card d-flex">{{ book.id }}</div>
+        <div class="carousel__card d-flex">
+          <app-product-card [product]="book" [cssClasses]="productCardScss"></app-product-card>
+        </div>
       </ng-container>
     </div>
   </div>

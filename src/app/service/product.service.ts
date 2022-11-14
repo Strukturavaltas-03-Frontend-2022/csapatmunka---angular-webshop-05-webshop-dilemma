@@ -16,6 +16,7 @@ export class ProductService {
     stock: 50,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ export class ProductService {
     stock: 150,
     featured: true,
     active: true,
+    discounted: false,
   },
 
   {
@@ -37,8 +39,9 @@ export class ProductService {
     image: '/assets/images/32.png',
     price: 4800,
     stock: 200,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: false,
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ export class ProductService {
     stock: 11,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 5,
@@ -60,7 +64,7 @@ export class ProductService {
     price: 7800,
     stock: 5,
     featured: true,
-    active: true,
+    active: true, discounted: false,
   },
   {
     id: 6,
@@ -72,6 +76,7 @@ export class ProductService {
     stock: 20,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 7,
@@ -83,6 +88,7 @@ export class ProductService {
     stock: 7,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 8,
@@ -94,6 +100,7 @@ export class ProductService {
     stock: 15,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 9,
@@ -105,17 +112,19 @@ export class ProductService {
     stock: 5,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 10,
     catId: 3,
-    name: ': Normális vagy - Trauma, betegség és gyógyulás mérgező világunkban',
+    name: 'Normális vagy - Trauma, betegség és gyógyulás mérgező világunkban',
     description: 'A test lázadása világhírű szerzője eddigi legátfogóbb és legteljesebb könyvében a betegségek valódi okait kutatja, miközben éles kritikát fogalmaz meg a minket körülvevő mérgező világról, valamint utat mutat az egészség és a gyógyulás felé. Máté Gábor, magyar származású.',
     image: '/assets/images/25.png',
     price: 4700,
     stock: 11,
     featured: false,
     active: false,
+    discounted: true,
   },
   {
     id: 11,
@@ -127,6 +136,7 @@ export class ProductService {
     stock: 8,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 12,
@@ -138,6 +148,7 @@ export class ProductService {
     stock: 5,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 13,
@@ -147,19 +158,21 @@ export class ProductService {
     image: '/assets/images/16.png',
     price: 4000,
     stock: 50,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: true,
   },
   {
     id: 14,
     catId: 2,
-    name: 'Heartstopper 3. - Szívdobbanás - Fülig beléd zúgtam 3. - képregény',
+    name: 'Heartstopper 3. - Szívdobbanás - Fülig beléd zúgtam 3.',
     description: 'CARTE POSTALE Szia Tori! Párizs csodálatos! Én, Nick és a barátaink szuperül érezzük magunkat! Viszont... volt némi dráma Taóval, és... hát, csomó minden történt. Majd otthon elmesélem!! Charlie x x x " Teljességgel elragadó. Aranyos, romantikus, kedves. ',
     image: '/assets/images/24.png',
     price: 4000,
     stock: 50,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: true,
   },
   {
     id: 15,
@@ -171,6 +184,7 @@ export class ProductService {
     stock: 5,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 16,
@@ -182,6 +196,7 @@ export class ProductService {
     stock: 6,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 17,
@@ -193,6 +208,7 @@ export class ProductService {
     stock: 5,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 18,
@@ -204,6 +220,7 @@ export class ProductService {
     stock: 7,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 19,
@@ -215,6 +232,7 @@ export class ProductService {
     stock: 80,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 20,
@@ -226,6 +244,7 @@ export class ProductService {
     stock: 57,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 21,
@@ -235,8 +254,9 @@ export class ProductService {
     image: '/assets/images/33.png',
     price: 6500,
     stock: 55,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: true,
   },
   {
     id: 22,
@@ -248,6 +268,7 @@ export class ProductService {
     stock: 78,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 23,
@@ -259,6 +280,7 @@ export class ProductService {
     stock: 544,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 24,
@@ -270,6 +292,7 @@ export class ProductService {
     stock: 9,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 25,
@@ -281,6 +304,7 @@ export class ProductService {
     stock: 510,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 26,
@@ -290,8 +314,9 @@ export class ProductService {
     image: '/assets/images/14.png',
     price: 7800,
     stock: 57,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: true,
   },
   {
     id: 27,
@@ -303,6 +328,7 @@ export class ProductService {
     stock: 78,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 28,
@@ -314,6 +340,7 @@ export class ProductService {
     stock: 5,
     featured: false,
     active: false,
+    discounted: true,
   },
   {
     id: 29,
@@ -325,6 +352,7 @@ export class ProductService {
     stock: 12,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 30,
@@ -336,6 +364,7 @@ export class ProductService {
     stock: 50,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 31,
@@ -347,28 +376,31 @@ export class ProductService {
     stock: 57,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 32,
     catId: 3,
-    name: 'AMaladie és más történetek',
+    name: 'Maladie és más történetek',
     description: 'A legendás Vaják-sorozat szerzőjének legjobb novellái! A kötetben nyolc merész történet szerepel Andrzej Sapkowski írói pályájának különböző szakaszaiból. Megtalálhatók köztük klasszikus fantasysztorik éppúgy, mint sci-fik és politikai témájú írások, melyekben a szerzőtől megszokott módon a sötét témákat szellemes humor színesíti.',
     image: '/assets/images/28.png',
     price: 9800,
     stock: 500,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 33,
     catId: 2,
-    name: ': Kis karácsony, nagy karácsony',
+    name: 'Kis karácsony, nagy karácsony',
     description: 'Ránézett az előtte terpeszkedő hatalmas faóriásra. Milyen méltóságteljes, és milyen dunyha vastagságú, hófehér palást borítja földig érő ágait. Mint valami sátor, akár meg is éjszakázhat alatta. Elfedi az, megvédi az erdő minden veszélyétől. Közben kitisztult az ég, s csillagok milliárdjai gyújtották meg kis lámpásaikat. ',
     image: '/assets/images/62.png',
     price: 1560,
     stock: 30,
     featured: true,
     active: true,
+    discounted: true,
   },
   {
     id: 34,
@@ -380,6 +412,7 @@ export class ProductService {
     stock: 570,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 35,
@@ -389,8 +422,9 @@ export class ProductService {
     image: '/assets/images/61.png',
     price: 4700,
     stock: 51,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: true,
   },
   {
     id: 36,
@@ -400,8 +434,9 @@ export class ProductService {
     image: '/assets/images/59.png',
     price: 7800,
     stock: 111,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: true,
   },
   {
     id: 37,
@@ -413,6 +448,7 @@ export class ProductService {
     stock: 57,
     featured: false,
     active: true,
+    discounted: false,
   },
   {
     id: 38,
@@ -424,6 +460,7 @@ export class ProductService {
     stock: 56,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 39,
@@ -435,6 +472,7 @@ export class ProductService {
     stock: 5,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 40,
@@ -446,6 +484,7 @@ export class ProductService {
     stock: 52,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 41,
@@ -457,6 +496,7 @@ export class ProductService {
     stock: 145,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 42,
@@ -468,6 +508,7 @@ export class ProductService {
     stock: 1,
     featured: false,
     active: true,
+    discounted: true,
   },
   {
     id: 43,
@@ -477,8 +518,9 @@ export class ProductService {
     image: '/assets/images/35.png',
     price: 4000,
     stock: 15,
-    featured: true,
+    featured: false,
     active: true,
+    discounted: false,
   },
   {
     id: 44,
@@ -490,6 +532,7 @@ export class ProductService {
     stock: 500,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 45,
@@ -501,6 +544,7 @@ export class ProductService {
     stock: 45,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 46,
@@ -512,6 +556,7 @@ export class ProductService {
     stock: 50,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 47,
@@ -523,6 +568,7 @@ export class ProductService {
     stock: 50,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 48,
@@ -534,6 +580,7 @@ export class ProductService {
     stock: 54,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 49,
@@ -545,6 +592,7 @@ export class ProductService {
     stock: 15,
     featured: true,
     active: true,
+    discounted: false,
   },
   {
     id: 50,
@@ -556,10 +604,9 @@ export class ProductService {
     stock: 5,
     featured: true,
     active: true,
+    discounted: true,
   },
-
-
-  ]
+]
 
 getProducts(): Product[] {
   return this.list;

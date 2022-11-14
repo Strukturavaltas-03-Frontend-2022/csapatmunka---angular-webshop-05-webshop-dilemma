@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -6,15 +6,11 @@ import { ProductService } from 'src/app/service/product.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  private products = this.productservice.getProducts();
+  public productsFeatured = this.products.filter(product => product.featured);
+  public productsDiscounted = this.products.filter(product => product.discounted);
+  public productsActive = this.products.filter(product => product.active).sort(() => Math.random() - 0.5).slice(0,5);
 
-  constructor(private productservice: ProductService) { }
-
-  productsFeatured = this.productservice.getProducts().filter(product=> product.featured === true).sort(() => Math.random() - 0.5).slice(0,5);
-
-  productsActive = this.productservice.getProducts().filter(product=> product.active === true).sort(() => Math.random() - 0.5).slice(0,5);
-
-  ngOnInit(): void {
-  }
-
+  constructor(private productservice: ProductService) {}
 }

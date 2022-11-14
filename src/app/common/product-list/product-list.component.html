@@ -8,7 +8,13 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <div class="card-group">
-       <app-product-card class="mb-5" [product]="item" *ngFor="let item of products | filter:filterPhrase:'name' " ></app-product-card>
+      <div class="product-list__cards">
+        <app-product-card
+          class="product-list__card"
+          [cssClasses]="{ descriptor: 'p-5 p-sm-4 p-lg-4' }"
+          [product]="item"
+          *ngFor="let item of products | filter:filterPhrase:'name'"
+        ></app-product-card>
       </div>
     </div>
+  </div>

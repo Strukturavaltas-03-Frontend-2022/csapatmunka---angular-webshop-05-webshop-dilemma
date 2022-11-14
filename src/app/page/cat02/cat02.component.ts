@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -6,17 +6,11 @@ import { ProductService } from 'src/app/service/product.service';
   templateUrl: './cat02.component.html',
   styleUrls: ['./cat02.component.scss']
 })
-export class Cat02Component implements OnInit {
+export class Cat02Component {
+  private categoryId = 2;
+  private products = this.productservice.getProducts();
+  public productsFeatured = this.products.filter(product=> product.catId === this.categoryId && product.featured);
+  public productsActive = this.products.filter(product=> product.catId === this.categoryId)
 
-  categoryId = 2
-
-  constructor(private productservice: ProductService) { }
-
-  productsFeatured = this.productservice.getProducts().filter(product=> product.catId === this.categoryId && product.featured === true).sort(() => Math.random() - 0.5).slice(0,5);
-
-  productsActive = this.productservice.getProducts().filter(product=> product.catId === this.categoryId)
-
-  ngOnInit(): void {
-  }
-
+  constructor(private productservice: ProductService) {}
 }
