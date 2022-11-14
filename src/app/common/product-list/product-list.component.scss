@@ -8,11 +8,12 @@
     display: flex;
 
     @media screen and (min-width: 992px) {
-      width: calc(100% / 3 - 2rem);
+      width: calc(100% / 5 - 2.4rem);
     }
 
     @media screen and (min-width: 576px) and (max-width: 991px) {
       width: calc(100% / 2 - 1.5rem);
+      justify-content: center;
     }
 
     @media screen and (max-width: 575px) {
