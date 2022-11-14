@@ -106,7 +106,7 @@ export class ProductService {
     id: 9,
     catId: 2,
     name: 'Sorsdöntő találkozások - Szülők és gyermekek',
-    description: '',
+    description: 'Minden önismereti úton eljön a pillanat, amikor rádöbbenünk, hogy elakadásaink, szorongásaink, visszahúzó negatív mintáink, kudarcos párkapcsolataink, de akár testi tüneteink gyökerei is a távoli múltba nyúlnak vissza. Felmenőink traumái, feldolgozatlan veszteségei, korlátozó hiedelmei mind ott visszhangoznak a mindennapjainkban, láthatatlanul.',
     image: '/assets/images/45.png',
     price: 2000,
     stock: 5,
