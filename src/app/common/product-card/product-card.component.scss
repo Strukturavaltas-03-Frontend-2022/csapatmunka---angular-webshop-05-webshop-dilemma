@@ -1,9 +1,15 @@
 .product-card {
   &__descriptor {
-    height: 15.125rem;
+    // height: 15.125rem;
+    height: 10rem;
+    width: 12.1rem;
 
     &_title {
       height: 6rem;
     }
+  }
+  .card .cardFooter .btn {
+    background-color: rgba(244, 97, 44, 0.893);
+    border: none;
   }
 }
