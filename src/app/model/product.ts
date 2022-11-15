@@ -1,12 +1,12 @@
 export class Product {
-  id: number =0;
-  catId: number =0;
+  id?: number = 1;
+  catId: number = 0;
   name: string = '';
-  description: string ='';
-  image = src/assets;
+  description: string = '';
+  image: string = '';
   price: number = 0;
-  stock?: number = 0;
-  featured?: boolean = true;
-  active?: boolean = true;
-
+   stock: number = 0;
+  featured: boolean = true;
+  active: boolean = true;
+  discounted: boolean = false;
 }

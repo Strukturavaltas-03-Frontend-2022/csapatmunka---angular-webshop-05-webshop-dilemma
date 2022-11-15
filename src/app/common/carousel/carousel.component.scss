@@ -1,0 +1,36 @@
+.carousel {
+  gap: 2%;
+  padding: 0 2%;
+
+  &__cards{
+    padding: 0 1rem
+  }
+
+  &__btn {
+    min-width: var(--carousel-button-width);
+    max-width: var(--carousel-button-width);
+
+    & button{
+      border: none;
+      background-color: unset;
+    }
+  }
+
+  &__card {
+    min-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
+    max-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
+
+
+    &s {
+      width: var(--carousel-cards-container-width);
+      overflow: hidden;
+
+      &_wrapper {
+        gap: var(--carousel-card-gap);
+        transform: translate(var(--carousel-offset));
+        transition: transform 2s ease-in-out;
+      }
+    }
+
+  }
+}
