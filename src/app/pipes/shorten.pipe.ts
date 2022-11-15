@@ -9,7 +9,7 @@ export class ShortenPipe implements PipeTransform {
     if(!value) return value
 
 
-    return [...value].slice(0,50).join('')+'...'
+    return [...value].slice(0,30).join('')+'...'
   }
 
 }
