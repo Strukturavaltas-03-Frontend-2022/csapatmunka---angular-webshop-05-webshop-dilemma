@@ -20,20 +20,30 @@
   </div>
 </div> -->
 
-
-
 <!-- Szabolcs: reedit by Dóri -->
 <div class="product-card pb-4">
   <div class="card border-0 shadow">
-    <img [src]="product.image" class="card-img-top">
-    <div class="product-card__descriptor d-flex flex-column" [ngClass]="cssClasses['descriptor']">
-      <h6 class="product-card__descriptor_title card-title break-all"> {{ product.name }} </h6>
-      <p class="card-text text-wrap break-all">{{ product.description | shorten}} <span *ngIf="product.featured" class="badge badge-success">Új</span></p>
+    <img [src]="product.image" class="card-img-top" />
+    <div
+      class="product-card__descriptor d-flex flex-column"
+      [ngClass]="cssClasses['descriptor']"
+    >
+      <h5 class="product-card__descriptor_title card-title break-all">
+        {{ product.name }}
+      </h5>
+      <h6 class="product-card__descriptor_title card-title break-all">
+        {{ product.author }}
+      </h6>
+      <!-- <p class="card-text text-wrap break-all">
+        {{ product.description | shorten }}
+        <span *ngIf="product.featured" class="badge badge-success">Új</span>
+      </p> -->
       <div class="cardFooter d-flex justify-content-between mt-auto">
         <span>Ár: {{ product.price }} Ft</span>
-        <a [routerLink]="['/products', product.id]" class="btn btn-info"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+        <a [routerLink]="['/products', product.id]" class="btn btn-info"
+          ><i class="fa fa-info-circle" aria-hidden="true"></i
+        ></a>
       </div>
     </div>
   </div>
 </div>
-
