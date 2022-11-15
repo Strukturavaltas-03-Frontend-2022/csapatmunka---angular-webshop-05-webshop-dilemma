@@ -1,15 +1,6 @@
-<div class="row">
-  <div class="col-12">
-    <app-carousel [books]="productsFeatured"></app-carousel>
-  </div>
-</div>
-<div class="row mt-5">
-  <div class="col-12">
-    <app-carousel [books]="productsDiscounted"></app-carousel>
-  </div>
-</div>
-<div class="row mt-3">
-  <div class="col-12">
-    <app-product-list [products]="productsActive"></app-product-list>
-  </div>
-</div>
+<h4 class="pb-4">Kiemelt ajánlataink</h4>
+<app-carousel [books]="productsFeatured"></app-carousel>
+<h4 class="pt-3 pb-4">Akciós ajánlataink</h4>
+<app-carousel [books]="productsDiscounted"></app-carousel>
+<h4 class="pt-3">Aktuális kínálatunk</h4>
+<app-product-list [products]="productsActive"></app-product-list>

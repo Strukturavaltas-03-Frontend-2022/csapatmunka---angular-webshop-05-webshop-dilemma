@@ -14,9 +14,9 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public instance = ++instanceConter;
   public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-1'}
+  public maxPage = 0;
+  public currPage = 0;
   private resizeSubscription: Subscription | undefined;
-  private maxPage = 0;
-  private currPage = 0;
   private screen = {
     mobile: {
       buttonWidth: 10,
@@ -64,9 +64,6 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    /* for (let i = 1; i < 24; i++) {
-      this.books.push({ id: i });
-    } */
     this.setMaxPage();
 
     this.resizeSubscription = fromEvent(window, 'resize').pipe(
