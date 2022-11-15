@@ -20,10 +20,12 @@
     id="navbarSupportedContent"
   >
     <ul class="navbar-nav mr-auto">
-      <li *ngFor="let item of menuItems" class="nav-item">
+      <li *ngFor="let item of menuItems" class="nav-item mr-3">
         <a
           class="nav-link text-white"
           [routerLink]="item.link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
         >{{ item.text }}</a>
       </li>
     </ul>
