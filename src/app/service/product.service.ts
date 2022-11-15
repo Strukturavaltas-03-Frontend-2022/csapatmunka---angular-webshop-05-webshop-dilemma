@@ -551,7 +551,7 @@ private datalist: User [] =[{
   catId: 5900,
   name: 'A vérfarkasok titka',
   description: 'Nagyapa bezárta maguk után az ajtót, majd többször aggodalmasan kilesett az ablakon. - Mi az? - kérdezte Herbert. - Semmi. - De látom, hogy van valami - makacskodott. - Valami nem stimmelt azzal a kutyával. Nagyapa megrázta a fejét. - Tévedtem - mondta. - Nem németjuhász volt. Sőt, nem is kutya. Valami más. Valami veszélyes. ',
-  image: ssrc/assets/10.png
+  image: src/assets/10.png
   price: 4200,
   stock: 5,
   featured: true,
