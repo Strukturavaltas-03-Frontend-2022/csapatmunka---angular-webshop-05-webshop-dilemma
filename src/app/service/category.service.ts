@@ -24,5 +24,9 @@ export class CategoryService {
     }
   ]
 
+  getAll():Category[]{
+    return this.categoryList
+  }
+
   constructor() { }
 }

@@ -2,9 +2,18 @@
   gap: 2%;
   padding: 0 2%;
 
+  &__cards{
+    padding: 0 1rem
+  }
+
   &__btn {
     min-width: var(--carousel-button-width);
     max-width: var(--carousel-button-width);
+
+    & button{
+      border: none;
+      background-color: unset;
+    }
   }
 
   &__card {
