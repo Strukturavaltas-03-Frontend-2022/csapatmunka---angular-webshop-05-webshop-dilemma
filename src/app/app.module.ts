@@ -17,6 +17,7 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 import { Cat03Component } from './page/cat03/cat03.component';
 import { CarouselComponent } from './common/carousel/carousel.component';
 import { ProductDetailComponent } from './common/product-detail/product-detail.component';
+import { SliceTitlePipe } from './pipes/slice-title.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProductDetailComponent } from './common/product-detail/product-detail.c
     Cat03Component,
     CarouselComponent,
     ProductDetailComponent,
+    SliceTitlePipe,
   ],
   imports: [
     BrowserModule,

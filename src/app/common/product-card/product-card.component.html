@@ -6,7 +6,7 @@
       [ngClass]="cssClasses['descriptor']"
     >
       <h5 class="product-card__descriptor_title card-title lead text-uppercase">
-        {{ product.name }}
+        {{ product.name | sliceTitle }}
       </h5>
       <h6 class="product-card__descriptor_title card-title">
         {{ product.author }}
