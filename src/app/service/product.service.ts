@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Product } from '../model/product';
 
 @Injectable({
@@ -611,6 +612,42 @@ export class ProductService {
 getProducts(): Product[] {
   return this.list;
 }
+
+productsChanged = new EventEmitter<Product[]>()
+
+sortAZ(products: Product[]){
+  products.sort((a,b)=> a.name.localeCompare(b.name) )
+  this.productsChanged.emit(products)
+}
+
+sortZA(products: Product[]){
+  products.sort((a,b)=> b.name.localeCompare(a.name) )
+  this.productsChanged.emit(products)
+}
+
+sort19(products: Product[]){
+  products.sort((a,b)=>a.price-b.price)
+  this.productsChanged.emit(products)
+}
+
+sort91(products: Product[]){
+  products.sort((a,b)=>b.price-a.price)
+  this.productsChanged.emit(products)
+}
+
+getFeatured(products: Product[]){
+  products.filter(product => product.featured);
+  this.productsChanged.emit(products)
+  return products
+}
+
+getDiscounted(products: Product[]){
+  products.filter(product => product.discounted);
+  this.productsChanged.emit(products)
+  return products
+}
+
+
 
 /* getOne(id: number): Product |{
   return this.list.find(product => product.id === id)
