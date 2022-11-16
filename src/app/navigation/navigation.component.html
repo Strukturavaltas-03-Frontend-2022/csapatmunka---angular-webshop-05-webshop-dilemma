@@ -1,8 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
-  <a
-    class="navbar-brand"
-    routerLink="/"
-  >{{ appName }}</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+  <a class="navbar-brand" routerLink="/">{{ appName }}</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -15,18 +12,16 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div
-    class="collapse navbar-collapse"
-    id="navbarSupportedContent"
-  >
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li *ngFor="let item of menuItems" class="nav-item mr-3">
         <a
-          class="nav-link text-white"
+          class="nav-link text-black"
           [routerLink]="item.link"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"
-        >{{ item.text }}</a>
+          [routerLinkActiveOptions]="{ exact: true }"
+          >{{ item.text }}</a
+        >
       </li>
     </ul>
   </div>
