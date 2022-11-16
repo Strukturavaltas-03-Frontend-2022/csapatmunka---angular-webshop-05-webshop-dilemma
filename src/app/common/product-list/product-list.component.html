@@ -13,7 +13,7 @@
           class="product-list__card"
           [cssClasses]="{ descriptor: 'p-5 p-sm-4 p-lg-4' }"
           [product]="item"
-          *ngFor="let item of products | filter:filterPhrase:'name'"
+          *ngFor="let item of products | filter:filterPhrase:['name', 'author', 'description', 'price']"
         ></app-product-card>
       </div>
     </div>
