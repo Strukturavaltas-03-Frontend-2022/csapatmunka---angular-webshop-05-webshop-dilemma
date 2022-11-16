@@ -740,20 +740,12 @@ sort91(products: Product[]){
 getFeatured(products: Product[]){
   products.filter(product => product.featured);
   this.productsChanged.emit(products)
-  return products
 }
 
 getDiscounted(products: Product[]){
   products.filter(product => product.discounted);
   this.productsChanged.emit(products)
-  return products
 }
-
-
-
-/* getOne(id: number): Product |{
-  return this.list.find(product => product.id === id)
-} */
 
   constructor() {}
 }
