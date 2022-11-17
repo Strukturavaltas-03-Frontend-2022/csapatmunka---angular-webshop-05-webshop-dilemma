@@ -3,4 +3,4 @@
 <h4 class="pt-3 pb-4">Akciós ajánlataink</h4>
 <app-carousel [books]="productsDiscounted"></app-carousel>
 <h4 class="pt-3">Aktuális kínálatunk</h4>
-<app-product-list [products]="productsActive"></app-product-list>
+<app-product-list [products]="productsActive" (sortClicked)="toSort($event)"></app-product-list>
