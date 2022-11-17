@@ -13,7 +13,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() books: any[] = [];
 
   public instance = ++instanceConter;
-  public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-1'}
+  public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-2'}
   public maxPage = 0;
   public currPage = 0;
   private resizeSubscription: Subscription | undefined;

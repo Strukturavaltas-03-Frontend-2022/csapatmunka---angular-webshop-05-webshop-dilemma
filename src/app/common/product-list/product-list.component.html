@@ -2,7 +2,7 @@
     <div class="col-12 mt-3">
       <div class="input-group mb-3">
         <input [(ngModel)]="filterPhrase" type="text" class="form-control" placeholder="Keress a könyvet között" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-info" type="button" id="button-addon2">Keresés</button>
+        <button class="search-btn" type="button" id="button-addon2">Keresés</button>
       </div>
     </div>
   </div>
@@ -11,7 +11,7 @@
       <div class="product-list__cards">
         <app-product-card
           class="product-list__card"
-          [cssClasses]="{ descriptor: 'p-5 p-sm-4 p-lg-4' }"
+          [cssClasses]="{ descriptor: 'p-4 p-lg-2 p-xl-3' }"
           [product]="item"
           *ngFor="let item of products | filter:filterPhrase:['name', 'author', 'description', 'price']"
         ></app-product-card>

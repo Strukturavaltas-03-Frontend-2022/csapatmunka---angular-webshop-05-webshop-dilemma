@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
-.break-all {
-  word-break: break-all;
+:root {
+  --app-bg-darker: rgba(208, 179, 158);
+  --app-bg-dark: rgba(208, 179, 158, 0.87);
+  --app-bg: rgba(208, 179, 158, 0.7);
+  --app-bg-light: rgba(208, 179, 158, 0.5);
+  --app-bg-lighter: rgba(208, 179, 158, 0.3);
+  --app-primary-darker: rgba(244, 97, 44);
+  --app-primary-dark: rgba(244, 97, 44, 0.87);
+  --app-primary: rgba(244, 97, 44, 0.7);
+  --app-primary-light: rgba(244, 97, 44, 0.5);
+  --app-primary-lighter: rgba(244, 97, 44, 0.3);
 }

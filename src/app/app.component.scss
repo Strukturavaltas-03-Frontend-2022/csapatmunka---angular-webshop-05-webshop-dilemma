@@ -8,8 +8,34 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.intro {
+  width: 100%;
+  height: auto;
+}
+
 .background {
-  min-height: 100vh;
-  min-width: 100vw;
-  background: rgba(208, 179, 158, 0.683);
+  background: var(--app-bg);
+}
+
+.subheading {
+  color: var(--app-primary-dark);
+  font-weight: 700;
+}
+
+.content {
+  @media screen and (min-width: 1200px) {
+    padding: 5rem;
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    padding: 3rem;
+  }
+
+  @media screen and (min-width: 576px) and (max-width: 991px) {
+    padding: 1.5rem;
+  }
+
+  @media screen and (max-width: 575px) {
+    padding: 1.5rem;
+  }
 }
