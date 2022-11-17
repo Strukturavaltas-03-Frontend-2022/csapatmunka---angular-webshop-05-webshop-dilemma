@@ -8,19 +8,21 @@
     & button {
       border: none;
       background-color: unset;
+      color: var(--app-primary);
 
-      &:hover:not(:disabled) {
-        color: var(--primary);
+      &:disabled {
+        color: var(--app-primary-lighter);
       }
 
-
+      &:hover:not(:disabled) {
+        color: var(--app-primary-dark);
+      }
     }
   }
 
   &__card {
     min-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
     max-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
-
 
     &s {
       width: var(--carousel-cards-container-width);
@@ -32,6 +34,5 @@
         transition: transform 2s ease-in-out;
       }
     }
-
   }
 }

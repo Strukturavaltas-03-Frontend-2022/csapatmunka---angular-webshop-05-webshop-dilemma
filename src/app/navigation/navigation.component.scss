@@ -1,5 +1,9 @@
-.active{
-  border-bottom: 1px solid white;
+.navigation {
+  background-color: var(--app-bg-darker);
+
+  .active {
+    border-bottom: 1px solid white;
+  }
 }
 
 
