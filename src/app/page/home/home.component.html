@@ -11,5 +11,5 @@
 </div>
 <div class="bg__active content">
   <h4 class="subheading pt-3">Aktuális kínálatunk</h4>
-  <app-product-list [products]="productsActive"></app-product-list>
+  <app-product-list [products]="productsActive" (sortClicked)="toSort($event)"></app-product-list>
 </div>
