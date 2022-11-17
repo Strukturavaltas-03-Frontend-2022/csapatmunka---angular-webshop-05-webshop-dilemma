@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+<nav class="navigation navbar navbar-expand-lg navbar-light sticky-top">
   <a class="navbar-brand" routerLink="/">{{ appName }}</a>
   <button
     class="navbar-toggler"
@@ -16,7 +16,7 @@
     <ul class="navbar-nav mr-auto">
       <li *ngFor="let item of menuItems" class="nav-item mr-3">
         <a
-          class="nav-link text-black"
+          class="nav-link"
           [routerLink]="item.link"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"

@@ -8,8 +8,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.background {
-  min-height: 100vh;
-  min-width: 100vw;
-  background: rgba(208, 179, 158, 0.683);
+.subheading {
+  color: var(--app-primary-darker);
+  font-weight: 700;
 }

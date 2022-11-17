@@ -517,7 +517,7 @@ export class ProductService {
       catId: 2,
       name: 'Nagy télkönyvem - mesék a télre és a téli ünnepekre való ráhangolódáshoz',
       author:
-        'Halász-Szabó Klaudia  Izmindi Katalin  Jámbor Eszter  Sarkady-Filák Éva  Sillinger Nikolett  Szeghy Karolina',
+        'Halász-Szabó Klaudia és társai',
       description:
         'A természet állandó körforgása a gyermekek számára az évszakok váltakozásában figyelhető meg a leginkább. Nagymértékben támogathatjuk a gyerekek lelki egyensúlyának a fenntartását azzal, ha minden évszakban segítünk nekik összhangba kerülni a természettel, és együtt hangolódunk rá velük annak ritmusára testileg és lelkileg egyaránt. ',
       image: '/assets/images/58.png',
