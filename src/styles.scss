@@ -11,3 +11,49 @@
   --app-primary-light: rgba(244, 97, 44, 0.5);
   --app-primary-lighter: rgba(244, 97, 44, 0.3);
 }
+
+.bg {
+  &__featured {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url(/assets/img/featured-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  &__discounted {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url(/assets/img/discounted-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  &__active {
+    background-color: var(--app-bg-light);
+  }
+}
+
+.content {
+  @media screen and (min-width: 1200px) {
+    padding: 5rem;
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    padding: 3rem;
+  }
+
+  @media screen and (min-width: 576px) and (max-width: 991px) {
+    padding: 1.5rem;
+  }
+
+  @media screen and (max-width: 575px) {
+    padding: 1.5rem;
+  }
+}

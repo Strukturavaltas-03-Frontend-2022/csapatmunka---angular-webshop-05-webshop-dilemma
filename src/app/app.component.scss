@@ -1,4 +1,8 @@
 // @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+@font-face {
+  font-family: 'Cookie';
+  src: url('../assets/fonts/Cookie/Cookie-Regular.ttf');
+}
 
 body {
   overflow-x: hidden;
@@ -9,33 +13,39 @@ body::-webkit-scrollbar {
 }
 
 .intro {
+  &__bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/Festive-book.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__title {
+    font-family: 'Cookie';
+    font-style: italic;
+
+    @media screen and (min-width: 992px) {
+      font-size: 3rem;
+      padding: 5rem 2rem;
+    }
+
+    @media screen and (min-width: 576px) and (max-width: 991px) {
+      font-size: 2.5rem;
+      padding: 5rem 2rem;
+    }
+
+    @media screen and (max-width: 575px) {
+      font-size: 2rem;
+      padding: 2rem 2rem;
+    }
+  }
+}
+
+.intro {
   width: 100%;
   height: auto;
 }
 
-.background {
-  background: var(--app-bg);
-}
-
 .subheading {
-  color: var(--app-primary-dark);
+  color: var(--app-primary-darker);
   font-weight: 700;
-}
-
-.content {
-  @media screen and (min-width: 1200px) {
-    padding: 5rem;
-  }
-
-  @media screen and (min-width: 992px) and (max-width: 1199px) {
-    padding: 3rem;
-  }
-
-  @media screen and (min-width: 576px) and (max-width: 991px) {
-    padding: 1.5rem;
-  }
-
-  @media screen and (max-width: 575px) {
-    padding: 1.5rem;
-  }
 }

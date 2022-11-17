@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { debounceTime, fromEvent, Subscription, tap } from 'rxjs';
 
-let instanceConter = 0;
+let instanceCounter = 0;
 
 @Component({
   selector: 'app-carousel',
@@ -12,7 +12,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() books: any[] = [];
 
-  public instance = ++instanceConter;
+  public instance = ++instanceCounter;
   public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-2'}
   public maxPage = 0;
   public currPage = 0;
