@@ -10,4 +10,5 @@ export class Product {
   featured: boolean = true;
   active: boolean = true;
   discounted: boolean = false;
+  isEditing?: boolean = false;
 }
