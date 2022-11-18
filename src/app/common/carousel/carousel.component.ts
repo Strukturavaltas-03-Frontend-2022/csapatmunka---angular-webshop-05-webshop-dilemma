@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { debounceTime, fromEvent, Subscription, tap } from 'rxjs';
 
-let instanceConter = 0;
+let instanceCounter = 0;
 
 @Component({
   selector: 'app-carousel',
@@ -12,11 +12,11 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() books: any[] = [];
 
-  public instance = ++instanceConter;
-  public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-1'}
+  public instance = ++instanceCounter;
+  public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-2'}
+  public maxPage = 0;
+  public currPage = 0;
   private resizeSubscription: Subscription | undefined;
-  private maxPage = 0;
-  private currPage = 0;
   private screen = {
     mobile: {
       buttonWidth: 10,
@@ -64,9 +64,6 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    /* for (let i = 1; i < 24; i++) {
-      this.books.push({ id: i });
-    } */
     this.setMaxPage();
 
     this.resizeSubscription = fromEvent(window, 'resize').pipe(

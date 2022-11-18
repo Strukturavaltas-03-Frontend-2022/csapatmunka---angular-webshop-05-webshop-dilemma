@@ -1,25 +1,28 @@
 .carousel {
   gap: 2%;
-  padding: 0 2%;
-
-  &__cards{
-    padding: 0 1rem
-  }
 
   &__btn {
     min-width: var(--carousel-button-width);
     max-width: var(--carousel-button-width);
 
-    & button{
+    & button {
       border: none;
       background-color: unset;
+      color: var(--app-primary);
+
+      &:disabled {
+        color: var(--app-primary-lighter);
+      }
+
+      &:hover:not(:disabled) {
+        color: var(--app-primary-dark);
+      }
     }
   }
 
   &__card {
     min-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
     max-width: calc(var(--carousel-cards-width) / var(--carousel-card-num));
-
 
     &s {
       width: var(--carousel-cards-container-width);
@@ -31,6 +34,5 @@
         transition: transform 2s ease-in-out;
       }
     }
-
   }
 }

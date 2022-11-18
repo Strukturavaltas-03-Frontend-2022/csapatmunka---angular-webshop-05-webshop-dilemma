@@ -1,9 +1,92 @@
 .product-card {
+  cursor: pointer;
+
   &__descriptor {
-    height: 15.125rem;
+    height: 14.5rem;
+    background-color: var(--app-bg-lighter);
 
     &_title {
-      height: 6rem;
+      height: 4.5rem;
+      font-weight: 500;
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1.125rem;
+      }
+
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        font-size: 1rem;
+      }
+
+      @media screen and (min-width: 576px) and (max-width: 991px) {
+        font-size: 1.2rem;
+      }
+
+      @media screen and (max-width: 575px) {
+        font-size: 1.25rem;
+      }
     }
+
+    &_subtitle {
+      color: rgb(65, 65, 65);
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1rem;
+      }
+
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        font-size: 0.85rem;
+      }
+
+      @media screen and (min-width: 576px) and (max-width: 991px) {
+        font-size: 1.125rem;
+      }
+
+      @media screen and (max-width: 575px) {
+        font-size: 1.125rem;
+      }
+    }
+
+    &_footer {
+      .btn {
+        color: white;
+        background-color: var(--app-primary-dark);
+        border: none;
+        padding: 0.125rem 0.5rem;
+
+        &:hover {
+          background-color: var(--app-primary-darker);
+          color: white;
+        }
+      }
+
+      .fa-heart {
+        color: var(--app-primary-darker);
+
+        &:hover {
+          color: red;
+          cursor: pointer;
+        }
+      }
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1.125rem;
+      }
+
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        font-size: 1rem;
+      }
+
+      @media screen and (min-width: 576px) and (max-width: 991px) {
+        font-size: 1.2rem;
+      }
+
+      @media screen and (max-width: 575px) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
   }
 }

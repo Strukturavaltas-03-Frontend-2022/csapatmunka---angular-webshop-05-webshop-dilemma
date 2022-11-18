@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -14,8 +14,13 @@ export class ProductListComponent implements OnInit {
   filterPhrase: string = '';
 
   @Input() products: Product[] = []
+  @Output() sortClicked: EventEmitter<string> = new EventEmitter()
 
   ngOnInit(): void {
+  }
+
+  sortClick(sortMode:string):void {
+    this.sortClicked.emit(sortMode)
   }
 
 }

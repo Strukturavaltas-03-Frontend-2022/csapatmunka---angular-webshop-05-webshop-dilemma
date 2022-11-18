@@ -1,39 +1,31 @@
-<!-- Petra: -->
-<!-- <div class="d-flex justify-content-center m-3">
-  <div class="card col-sm-12 col-md-6 col-lg-3" style="width: 18rem">
-    <img [src]="product.image" class="card-img-top" alt="Image of a book" />
-    <div class="card-body d-flex flex-direction-column">
-      <h5 class="card-title">
-        {{ product.name }}
-      </h5>
-      <div>
-        <p class="card-text">{{ product.description }}</p>
-      </div>
-      <div>
-        <p class="card-text">{{ product.stock }}</p>
-      </div>
-      <div>
-        <p class="card-text">{{ product.price }} Ft</p>
-      </div>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div> -->
-
-
-
-<!-- Szabolcs: reedit by Dóri -->
-<div class="product-card pb-4">
-  <div class="card border-0 shadow">
-    <img [src]="product.image" class="card-img-top">
-    <div class="product-card__descriptor d-flex flex-column" [ngClass]="cssClasses['descriptor']">
-      <h6 class="product-card__descriptor_title card-title break-all"> {{ product.name }} </h6>
-      <p class="card-text text-wrap break-all">{{ product.description | shorten}} <span *ngIf="product.featured" class="badge badge-success">Új</span></p>
-      <div class="cardFooter d-flex justify-content-between mt-auto">
-        <span>Ár: {{ product.price }} Ft</span>
-        <a [routerLink]="['/products', product.id]" class="btn btn-info"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+<div class="product-card mb-4">
+  <div class="card border-0 shadow" (click)="openDetail()">
+    <img [src]="product.image" class="card-img-top" />
+    <div
+      class="product-card__descriptor d-flex flex-column"
+      [ngClass]="cssClasses['descriptor']"
+    >
+      <p
+        class="product-card__descriptor_title card-title"
+      >
+        {{ product.name | sliceTitle }}
+      </p>
+      <p
+        class="product-card__descriptor_subtitle card-title"
+      >
+        {{ product.author }}
+      </p>
+      <div
+        class="product-card__descriptor_footer d-flex flex-column justify-content-between mt-auto"
+      >
+        <div class="d-flex justify-content-between">
+          <span>Ár: {{ product.price }} Ft</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <i class="fa fa-heart" aria-hidden="true" (click)="$event.stopPropagation()"></i>
+          <button class="btn" (click)="$event.stopPropagation()">Kosárba</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
-

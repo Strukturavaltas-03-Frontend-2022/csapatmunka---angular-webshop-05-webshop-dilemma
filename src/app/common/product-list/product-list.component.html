@@ -2,7 +2,20 @@
     <div class="col-12 mt-3">
       <div class="input-group mb-3">
         <input [(ngModel)]="filterPhrase" type="text" class="form-control" placeholder="Keress a könyvet között" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-info" type="button" id="button-addon2">Keresés</button>
+        <button class="search-btn" type="button" id="button-addon2">Keresés</button>
+      </div>
+    </div>
+  </div>
+  <div class="row my-2">
+    <div class="col-12">
+      <div role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-dark mr-3">Rendezés</button>
+        <button type="button" id="nameAZ" #nameAZ class="btn btn-secondary btn-sm  mr-3" (click)="sortClick(nameAZ.id)">Név A-z</button>
+        <button type="button" id="nameZA" #nameZA class="btn btn-secondary btn-sm mr-3" (click)="sortClick(nameZA.id)">Név Z-a</button>
+        <button type="button" id="price19" #price19 class="btn btn-secondary btn-sm  mr-3" (click)="sortClick(price19.id)">Ar 1-9999</button>
+        <button type="button" id="price91" #price91 class="btn btn-secondary btn-sm mr-3" (click)="sortClick(price91.id)">Ár 9999-1</button>
+        <button type="button" id="discount" #discount class="btn btn-secondary btn-sm mr-3" (click)="sortClick(discount.id)">Akciós</button>
+        <button type="button" id="featured" #featured class="btn btn-secondary btn-sm mr-3" (click)="sortClick(featured.id)">Kiemelt</button>
       </div>
     </div>
   </div>
@@ -11,9 +24,9 @@
       <div class="product-list__cards">
         <app-product-card
           class="product-list__card"
-          [cssClasses]="{ descriptor: 'p-5 p-sm-4 p-lg-4' }"
+          [cssClasses]="{ descriptor: 'p-4 p-lg-2 p-xl-3' }"
           [product]="item"
-          *ngFor="let item of products | filter:filterPhrase:'name'"
+          *ngFor="let item of products | filter:filterPhrase:['name', 'author', 'description', 'price']"
         ></app-product-card>
       </div>
     </div>

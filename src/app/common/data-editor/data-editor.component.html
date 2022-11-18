@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-striped mt-4 table-hover">
+      <thead>
+        <tr>
+          <th *ngFor="let col of columns">{{ col.title }}</th>
+          <th>Szerkesztés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>{{ product.id }}</td>
+          <td>{{ product.catId }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.author }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.image }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.stock }}</td>
+          <td>{{ product.featured }}</td>
+          <td>{{ product.active }}</td>
+          <td>{{ product.discounted }}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-warning">
+                <i class="fa fa-pencil" aria-hidden="true"></i></button
+              ><button class="btn btn-danger">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
+              <button class="btn btn-info">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i></button
+              ><button class="btn btn-secondary">
+                <i class="fa fa-ban" aria-hidden="true"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
