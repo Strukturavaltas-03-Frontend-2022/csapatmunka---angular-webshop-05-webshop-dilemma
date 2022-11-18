@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="table-responsive">
-    <table class="table table-striped mt-4 table-hover">
+    <table class="table table-striped mt-4 table-hover table-bordered">
       <thead>
         <tr>
           <th *ngFor="let col of columns">{{ col.title }}</th>
@@ -10,29 +10,159 @@
       <tbody>
         <tr *ngFor="let product of productList">
           <td>{{ product.id }}</td>
-          <td>{{ product.catId }}</td>
-          <td>{{ product.name }}</td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.catId"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.catId }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.name"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.name }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.author"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.author }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.description"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.description }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.image"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.image }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.price"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.price }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.stock"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.stock }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.featured"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.featured | trueFalse }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.active"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.active | trueFalse }}
+            </div>
+          </td>
+          <td>
+            <div *ngIf="product.isEditing">
+              <input
+                type="text"
+                [(ngModel)]="product.discounted"
+                class="form-control"
+              />
+            </div>
+            <div *ngIf="!product.isEditing">
+              {{ product.discounted | trueFalse }}
+            </div>
+          </td>
+          <!-- <td>{{ product.name }}</td>
           <td>{{ product.author }}</td>
           <td>{{ product.description }}</td>
           <td>{{ product.image }}</td>
           <td>{{ product.price }}</td>
           <td>{{ product.stock }}</td>
-          <td>{{ product.featured }}</td>
-          <td>{{ product.active }}</td>
-          <td>{{ product.discounted }}</td>
-          <td>
-            <div class="btn-group">
-              <button class="btn btn-warning">
-                <i class="fa fa-pencil" aria-hidden="true"></i></button
-              ><button class="btn btn-danger">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </button>
-              <button class="btn btn-info">
+          <td>{{ product.featured | trueFalse }}</td>
+          <td>{{ product.active | trueFalse }}</td>
+          <td>{{ product.discounted | trueFalse }}</td>
+          -->
+          <td class="row">
+            <div *ngIf="product.isEditing">
+              <button class="btn btn-success">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i></button
-              ><button class="btn btn-secondary">
+              ><button
+                class="btn btn-secondary"
+                (click)="product.isEditing = false"
+              >
                 <i class="fa fa-ban" aria-hidden="true"></i>
               </button>
             </div>
+            <div *ngIf="!product.isEditing">
+              <button class="btn btn-info">
+                <i
+                  (click)="onEdit(product)"
+                  class="fa fa-pencil"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+            <button (click)="onDelete(product)" class="btn btn-danger">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
           </td>
         </tr>
       </tbody>

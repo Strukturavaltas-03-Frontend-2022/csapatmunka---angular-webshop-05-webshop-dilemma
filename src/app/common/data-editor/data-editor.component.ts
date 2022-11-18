@@ -21,4 +21,13 @@ export class DataEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onEdit(item: any) {
+    this.productList.forEach((element) => {
+      element.isEditing = false;
+    });
+    item.isEditing = true;
+  }
+
+  onDelete(product: Product) {}
 }

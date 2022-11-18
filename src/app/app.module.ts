@@ -20,6 +20,7 @@ import { ProductDetailComponent } from './common/product-detail/product-detail.c
 import { SliceTitlePipe } from './pipes/slice-title.pipe';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
 import { AdminComponent } from './page/admin/admin.component';
+import { TrueFalsePipe } from './pipes/true-false.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AdminComponent } from './page/admin/admin.component';
     SliceTitlePipe,
     DataEditorComponent,
     AdminComponent,
+    TrueFalsePipe,
   ],
   imports: [
     BrowserModule,

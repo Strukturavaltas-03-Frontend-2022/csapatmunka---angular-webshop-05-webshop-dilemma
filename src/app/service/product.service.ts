@@ -20,6 +20,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 2,
@@ -34,6 +35,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
 
     {
@@ -49,6 +51,7 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 4,
@@ -63,6 +66,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 5,
@@ -77,6 +81,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 6,
@@ -91,6 +96,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 7,
@@ -105,6 +111,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 8,
@@ -119,6 +126,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 9,
@@ -133,6 +141,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 10,
@@ -147,6 +156,8 @@ export class ProductService {
       featured: false,
       active: false,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 11,
@@ -161,6 +172,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 12,
@@ -175,6 +187,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 13,
@@ -189,6 +202,8 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 14,
@@ -203,6 +218,8 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 15,
@@ -217,6 +234,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 16,
@@ -231,6 +249,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 17,
@@ -245,6 +264,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 18,
@@ -259,6 +279,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 19,
@@ -273,6 +294,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 20,
@@ -287,6 +309,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 21,
@@ -301,6 +324,8 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 22,
@@ -315,6 +340,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 23,
@@ -329,6 +355,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 24,
@@ -343,6 +370,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 25,
@@ -357,6 +385,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 26,
@@ -371,6 +400,8 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 27,
@@ -385,6 +416,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 28,
@@ -399,6 +431,8 @@ export class ProductService {
       featured: false,
       active: false,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 29,
@@ -413,6 +447,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 30,
@@ -427,6 +462,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 31,
@@ -441,6 +477,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 32,
@@ -455,6 +492,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 33,
@@ -469,6 +507,8 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 34,
@@ -483,6 +523,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 35,
@@ -497,6 +538,8 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 36,
@@ -511,6 +554,8 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 37,
@@ -525,6 +570,7 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 38,
@@ -539,6 +585,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 39,
@@ -553,6 +600,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 40,
@@ -567,6 +615,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 41,
@@ -581,6 +630,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 42,
@@ -595,6 +645,8 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: true,
+
+      isEditing: false,
     },
     {
       id: 43,
@@ -609,6 +661,7 @@ export class ProductService {
       featured: false,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 44,
@@ -623,6 +676,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 45,
@@ -637,6 +691,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 46,
@@ -651,6 +706,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 47,
@@ -665,6 +721,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 48,
@@ -679,6 +736,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 49,
@@ -693,6 +751,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: false,
+      isEditing: false,
     },
     {
       id: 50,
@@ -707,6 +766,7 @@ export class ProductService {
       featured: true,
       active: true,
       discounted: true,
+      isEditing: false,
     },
   ];
 
