@@ -16,7 +16,9 @@ export class DataEditorComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private config: ConfigService
-  ) {}
+  ) {
+    this.productList = this.productService.getProducts();
+  }
 
   ngOnInit(): void {}
 }

@@ -516,8 +516,7 @@ export class ProductService {
       id: 37,
       catId: 2,
       name: 'Nagy télkönyvem - mesék a télre és a téli ünnepekre való ráhangolódáshoz',
-      author:
-        'Halász-Szabó Klaudia és társai',
+      author: 'Halász-Szabó Klaudia és társai',
       description:
         'A természet állandó körforgása a gyermekek számára az évszakok váltakozásában figyelhető meg a leginkább. Nagymértékben támogathatjuk a gyerekek lelki egyensúlyának a fenntartását azzal, ha minden évszakban segítünk nekik összhangba kerülni a természettel, és együtt hangolódunk rá velük annak ritmusára testileg és lelkileg egyaránt. ',
       image: '/assets/images/58.png',
@@ -715,37 +714,37 @@ export class ProductService {
     return this.list;
   }
 
-productsChanged = new EventEmitter<Product[]>()
+  productsChanged = new EventEmitter<Product[]>();
 
-sortAZ(products: Product[]){
-  products.sort((a,b)=> a.name.localeCompare(b.name) )
-  this.productsChanged.emit(products)
-}
+  sortAZ(products: Product[]) {
+    products.sort((a, b) => a.name.localeCompare(b.name));
+    this.productsChanged.emit(products);
+  }
 
-sortZA(products: Product[]){
-  products.sort((a,b)=> b.name.localeCompare(a.name) )
-  this.productsChanged.emit(products)
-}
+  sortZA(products: Product[]) {
+    products.sort((a, b) => b.name.localeCompare(a.name));
+    this.productsChanged.emit(products);
+  }
 
-sort19(products: Product[]){
-  products.sort((a,b)=>a.price-b.price)
-  this.productsChanged.emit(products)
-}
+  sort19(products: Product[]) {
+    products.sort((a, b) => a.price - b.price);
+    this.productsChanged.emit(products);
+  }
 
-sort91(products: Product[]){
-  products.sort((a,b)=>b.price-a.price)
-  this.productsChanged.emit(products)
-}
+  sort91(products: Product[]) {
+    products.sort((a, b) => b.price - a.price);
+    this.productsChanged.emit(products);
+  }
 
-getFeatured(products: Product[]){
-  products.filter(product => product.featured);
-  this.productsChanged.emit(products)
-}
+  getFeatured(products: Product[]) {
+    products.filter((product) => product.featured);
+    this.productsChanged.emit(products);
+  }
 
-getDiscounted(products: Product[]){
-  products.filter(product => product.discounted);
-  this.productsChanged.emit(products)
-}
+  getDiscounted(products: Product[]) {
+    products.filter((product) => product.discounted);
+    this.productsChanged.emit(products);
+  }
 
   constructor() {}
 }
