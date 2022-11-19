@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
 
   filterPhrase: string = '';
 
-  @Input() products: Product[] = []
+  @Input() products: Product[] | null = []
   @Output() sortClicked: EventEmitter<string> = new EventEmitter()
 
   ngOnInit(): void {
