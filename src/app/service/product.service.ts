@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Product } from '../model/product';
+import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -770,9 +773,35 @@ export class ProductService {
     },
   ];
 
+
+  entityName: string = 'books'
+  apiUrl: string = `${environment.apiUrl}${this.entityName}`
+
+  //még az eredeti adatlekérés
   getProducts(): Product[] {
     return this.list;
   }
+
+  getAll(): Observable<Product[]>{
+    return this.html.get<Product[]>(this.apiUrl)
+  }
+
+  getOne(id:number): Observable<Product>{
+    return this.html.get<Product>(`${this.apiUrl}/${id}`)
+  }
+
+  create(product:Product): Observable<Product[]>{
+    return this.html.post<Product[]>(this.apiUrl,product)
+  }
+
+  update(product: Product): Observable<Product>{
+    return this.html.put<Product>(`${this.apiUrl}/${product.id}`, product)
+  }
+
+  remove(id:number): Observable<Product>{
+    return this.html.delete<Product>(`${this.apiUrl}/${id}`)
+  }
+
 
   productsChanged = new EventEmitter<Product[]>();
 
@@ -806,5 +835,5 @@ export class ProductService {
     this.productsChanged.emit(products);
   }
 
-  constructor() {}
+  constructor(private html: HttpClient) {}
 }
