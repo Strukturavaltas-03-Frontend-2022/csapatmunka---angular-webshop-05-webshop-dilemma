@@ -21,6 +21,7 @@ import { SliceTitlePipe } from './pipes/slice-title.pipe';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
 import { AdminComponent } from './page/admin/admin.component';
 import { TrueFalsePipe } from './pipes/true-false.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TrueFalsePipe } from './pipes/true-false.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
