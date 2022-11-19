@@ -3,7 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { Product } from '../model/product';
 import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -802,36 +802,35 @@ export class ProductService {
     return this.html.delete<Product>(`${this.apiUrl}/${id}`)
   }
 
+  productsChanged = new EventEmitter<Observable<Product[]>>();
 
-  productsChanged = new EventEmitter<Product[]>();
-
-  sortAZ(products: Product[]) {
-    products.sort((a, b) => a.name.localeCompare(b.name));
+  sortAZ(products: Observable<Product[]>) {
+    products.pipe(map(results => results.sort((a, b) => a.name.localeCompare(b.name))))
     this.productsChanged.emit(products);
   }
 
-  sortZA(products: Product[]) {
-    products.sort((a, b) => b.name.localeCompare(a.name));
+  sortZA(products: Observable<Product[]>) {
+    products.pipe(map(results => results.sort((a, b) => b.name.localeCompare(a.name))))
     this.productsChanged.emit(products);
   }
 
-  sort19(products: Product[]) {
-    products.sort((a, b) => a.price - b.price);
+  sort19(products: Observable<Product[]>) {
+    products.pipe(map(results => results.sort((a, b) => a.price - b.price)))
     this.productsChanged.emit(products);
   }
 
-  sort91(products: Product[]) {
-    products.sort((a, b) => b.price - a.price);
+  sort91(products: Observable<Product[]>) {
+    products.pipe(map(results => results.sort((a, b) => a.price - b.price)))
     this.productsChanged.emit(products);
   }
 
-  getFeatured(products: Product[]) {
-    products.filter((product) => product.featured);
+  getFeatured(products: Observable<Product[]>) {
+    products.pipe(map(results => results.filter((product) => product.featured)))
     this.productsChanged.emit(products);
   }
 
-  getDiscounted(products: Product[]) {
-    products.filter((product) => product.discounted);
+  getDiscounted(products: Observable<Product[]>) {
+    products.pipe(map(results => results.filter((product) => product.discounted)))
     this.productsChanged.emit(products);
   }
 
