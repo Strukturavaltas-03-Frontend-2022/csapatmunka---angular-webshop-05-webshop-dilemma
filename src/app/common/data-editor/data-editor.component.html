@@ -142,13 +142,14 @@
           -->
           <td class="row">
             <div *ngIf="product.isEditing">
-              <button class="btn btn-success">
-                <i class="fa fa-floppy-o" aria-hidden="true"></i></button
-              ><button
-                class="btn btn-secondary"
+                <!--<button class="btn btn-secondary">
+                <i class="fa fa-ban" aria-hidden="true"></i></button
+              > -->
+              <button
+                class="btn btn-success"
                 (click)="product.isEditing = false"
               >
-                <i class="fa fa-ban" aria-hidden="true"></i>
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
               </button>
             </div>
             <div *ngIf="!product.isEditing">
@@ -160,9 +161,15 @@
                 ></i>
               </button>
             </div>
-            <button (click)="onDelete(product)" class="btn btn-danger">
+                <button (click)="onDelete(product)" class="btn btn-danger">
               <i class="fa fa-trash-o" aria-hidden="true"></i>
             </button>
+
+
+
+
+
+
           </td>
         </tr>
       </tbody>
