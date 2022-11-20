@@ -8,7 +8,6 @@ import { Cat01Component } from './page/cat01/cat01.component';
 import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
-import { ProductFilterPipe } from './pipes/productfilter.pipe';
 import { ProductTurnComponent } from './common/product-turn/product-turn.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { FilterPipe } from './pipes/filter.pipe';
@@ -22,6 +21,7 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
 import { AdminComponent } from './page/admin/admin.component';
 import { TrueFalsePipe } from './pipes/true-false.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -31,11 +31,11 @@ import { HttpClientModule } from '@angular/common/http';
     Cat02Component,
     HomeComponent,
     ProductCardComponent,
-    ProductFilterPipe,
     ProductTurnComponent,
     ProductListComponent,
     FilterPipe,
     ShortenPipe,
+    SortPipe,
     Cat03Component,
     CarouselComponent,
     ProductDetailComponent,

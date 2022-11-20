@@ -6,7 +6,7 @@
   </div>
   <div class="carousel__cards">
     <div class="carousel__cards_wrapper d-flex">
-      <ng-container *ngFor="let book of books">
+      <ng-container *ngFor="let book of books | async">
         <div class="carousel__card d-flex">
           <app-product-card [product]="book" [cssClasses]="productCardScss"></app-product-card>
         </div>

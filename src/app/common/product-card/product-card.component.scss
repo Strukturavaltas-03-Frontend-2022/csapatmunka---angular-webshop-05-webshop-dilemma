@@ -88,5 +88,7 @@
 
   &:hover {
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+    border: 1px solid var(--app-primary);
+    border-radius: 0.25rem;
   }
 }

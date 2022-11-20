@@ -1,26 +1,21 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/model/product';
-import { ProductService } from 'src/app/service/product.service';
+import { SortType } from 'src/app/model/sortType';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
+  @Input() products: Product[] = [];
 
-  constructor(private productService: ProductService) { }
+  public filterPhrase: string = '';
+  public sortType: SortType = 'NameAZ';
 
-  filterPhrase: string = '';
+  constructor() {}
 
-  @Input() products: Product[] | null = []
-  @Output() sortClicked: EventEmitter<string> = new EventEmitter()
-
-  ngOnInit(): void {
+  sort(sortType: SortType) {
+    this.sortType = sortType;
   }
-
-  sortClick(sortMode:string):void {
-    this.sortClicked.emit(sortMode)
-  }
-
 }

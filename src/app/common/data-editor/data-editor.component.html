@@ -8,161 +8,151 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of productList">
+        <tr *ngFor="let product of products | async">
           <td>{{ product.id }}</td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.catId"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.catId }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.name"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.name }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.author"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.author }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.description"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.description }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.image"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.image }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.price"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.price }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.stock"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.stock }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.featured"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.featured | trueFalse }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.active"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.active | trueFalse }}
             </div>
           </td>
           <td>
-            <div *ngIf="product.isEditing">
+            <div *ngIf="product.id === editedId">
               <input
                 type="text"
                 [(ngModel)]="product.discounted"
                 class="form-control"
               />
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               {{ product.discounted | trueFalse }}
             </div>
           </td>
-          <!-- <td>{{ product.name }}</td>
-          <td>{{ product.author }}</td>
-          <td>{{ product.description }}</td>
-          <td>{{ product.image }}</td>
-          <td>{{ product.price }}</td>
-          <td>{{ product.stock }}</td>
-          <td>{{ product.featured | trueFalse }}</td>
-          <td>{{ product.active | trueFalse }}</td>
-          <td>{{ product.discounted | trueFalse }}</td>
-          -->
           <td class="row">
-            <div *ngIf="product.isEditing">
-              <button class="btn btn-success">
-                <i class="fa fa-floppy-o" aria-hidden="true"></i></button
-              ><button
-                class="btn btn-secondary"
-                (click)="product.isEditing = false"
+            <div *ngIf="product.id === editedId">
+              <button
+                class="btn btn-success"
+                (click)="save()"
               >
-                <i class="fa fa-ban" aria-hidden="true"></i>
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
               </button>
             </div>
-            <div *ngIf="!product.isEditing">
+            <div *ngIf="product.id !== editedId">
               <button class="btn btn-info">
                 <i
-                  (click)="onEdit(product)"
+                  (click)="edit(product)"
                   class="fa fa-pencil"
                   aria-hidden="true"
                 ></i>
               </button>
             </div>
-            <button (click)="onDelete(product)" class="btn btn-danger">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </button>
+            <ng-container *ngIf="product.id !== editedId">
+              <button (click)="delete(product.id || -1)" class="btn btn-danger">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
+            </ng-container>
           </td>
         </tr>
       </tbody>
