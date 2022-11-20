@@ -1,20 +1,20 @@
-<div class="container">
+<div *ngIf="product" class="container">
   <div class="row mt-5">
     <div class="col-12">
       <div class="card mt-3 shadow ">
         <div class="row no-gutters">
           <div class="col-md-4 text-center">
-            <img class="img-fluid rounded" [src]="actualProduct.image" alt="..." />
+            <img class="img-fluid rounded" [src]="product.image" alt="..." />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h4 class="card-title">{{ actualProduct.name }}</h4>
+              <h4 class="card-title">{{ product.name }}</h4>
               <div class="line"><hr /></div>
-              <h5 class="card-title font-italic">{{ actualProduct.author }}</h5>
-              <p class="card-text">Kategória: {{ actualCategory.name }}</p>
-              <p class="card-text">{{ actualProduct.description }}</p>
-              <p class="card-text">Raktáron: {{ actualProduct.stock }} db</p>
-              <h5 class="card-text">Ár: {{ actualProduct.price }} Ft</h5>
+              <h5 class="card-title font-italic">{{ product.author }}</h5>
+              <p class="card-text">Kategória: {{ category }}</p>
+              <p class="card-text">{{ product.description }}</p>
+              <p class="card-text">Raktáron: {{ product.stock }} db</p>
+              <h5 class="card-text">Ár: {{ product.price }} Ft</h5>
             </div>
           </div>
         </div>

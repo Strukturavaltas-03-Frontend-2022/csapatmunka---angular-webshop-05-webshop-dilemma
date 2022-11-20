@@ -1,40 +1,36 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from 'src/app/model/product';
-import { ProductService } from 'src/app/service/product.service';
 import { ConfigService, ITableColumn } from 'src/app/service/config.service';
-import { EventEmitter } from 'stream';
-import { isNgTemplate } from '@angular/compiler';
+import { ProductHandlerService } from 'src/app/product-handler.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-data-editor',
   templateUrl: './data-editor.component.html',
   styleUrls: ['./data-editor.component.scss'],
 })
-export class DataEditorComponent implements OnInit {
-  productList: Product[] = [];
-
+export class DataEditorComponent {
+  products: Observable<Product[]>;
   columns: ITableColumn[] = this.config.dataTableColumns;
-
-
+  editedId = -1;
 
   constructor(
-    private productService: ProductService,
+    private productSvc: ProductHandlerService,
     private config: ConfigService
   ) {
-    this.productList = this.productService.getProducts();
+    this.products = this.productSvc.products;
   }
 
-  ngOnInit(): void {}
+  save() {
 
-  onEdit(item: any) {
-    this.productList.forEach((element) => {
-      element.isEditing = false;
-    });
-    item.isEditing = true;
   }
 
-  onDelete(product: Product): void{
-    this.productList.splice(product,1);
+  edit(product: Product) {
+    this.editedId = product.id || -1;
+  }
+
+  delete(productId: number): void{
+
   }
 }
 

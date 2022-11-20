@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime, fromEvent, Subscription, tap } from 'rxjs';
+import { BehaviorSubject, debounceTime, fromEvent, Observable, Subscription, tap } from 'rxjs';
 import { Product } from 'src/app/model/product';
 
 let instanceCounter = 0;
@@ -11,13 +11,14 @@ let instanceCounter = 0;
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  @Input() books: Product[] | null = [];
+  @Input() books: Observable<Product[]> | undefined;
 
   public instance = ++instanceCounter;
   public productCardScss = { descriptor: 'p-4 p-sm-2 p-lg-2'}
   public maxPage = 0;
   public currPage = 0;
-  public booksLength = this.books?.length? this.books.length : 0
+  private _books: Product[] = []
+  private booksSubscription: Subscription | undefined;
   private resizeSubscription: Subscription | undefined;
   private screen = {
     mobile: {
@@ -66,7 +67,10 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.setMaxPage();
+    this.booksSubscription = this.books?.subscribe((books) => {
+      this._books = books;
+      this.setMaxPage();
+    })
 
     this.resizeSubscription = fromEvent(window, 'resize').pipe(
       debounceTime(100),
@@ -97,6 +101,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     this.resizeSubscription?.unsubscribe();
+    this.booksSubscription?.unsubscribe();
   }
 
   pager(next?: boolean) {
@@ -121,10 +126,10 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private calcPartialPageOffset(pageOffset: number, next?: boolean) {
     let partialPageOffset = pageOffset;
-    const lastPageCards = this.booksLength % this.cardNum
+    const lastPageCards = this._books.length % this.cardNum
 
     if (lastPageCards > 0 && ((next && this.currPage === this.maxPage) || (!next && this.currPage === this.maxPage - 1))) {
-      partialPageOffset = (partialPageOffset / this.cardNum) * (this.booksLength % this.cardNum);
+      partialPageOffset = (partialPageOffset / this.cardNum) * (this._books.length % this.cardNum);
     }
 
     return partialPageOffset;
@@ -163,6 +168,6 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private setMaxPage() {
-    this.maxPage = Math.ceil(this.booksLength / this.cardNum) - 1;
+    this.maxPage = Math.ceil(this._books.length / this.cardNum) - 1;
   }
 }

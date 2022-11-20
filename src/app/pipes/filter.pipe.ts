@@ -27,7 +27,7 @@ export class FilterPipe<T extends { [key: string]: any }> implements PipeTransfo
         result = [...result, ...partialResult];
       });
 
-      return result;
+      return [...new Set(result.map(obj => JSON.stringify(obj)))].map(str => JSON.parse(str));
     }
   }
 }

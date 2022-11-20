@@ -1,2 +1,4 @@
 <app-navigation></app-navigation>
-<router-outlet></router-outlet>
+<ng-container *ngIf="(products | async)?.length">
+  <router-outlet></router-outlet>
+</ng-container>

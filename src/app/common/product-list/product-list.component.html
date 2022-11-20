@@ -10,12 +10,10 @@
     <div class="col-12">
       <div role="group" aria-label="Basic example">
         <button type="button" class="btn btn-dark mr-3">Rendezés</button>
-        <button type="button" id="nameAZ" #nameAZ class="btn btn-secondary btn-sm  mr-3" (click)="sortClick(nameAZ.id)">Név A-z</button>
-        <button type="button" id="nameZA" #nameZA class="btn btn-secondary btn-sm mr-3" (click)="sortClick(nameZA.id)">Név Z-a</button>
-        <button type="button" id="price19" #price19 class="btn btn-secondary btn-sm  mr-3" (click)="sortClick(price19.id)">Ar 1-9999</button>
-        <button type="button" id="price91" #price91 class="btn btn-secondary btn-sm mr-3" (click)="sortClick(price91.id)">Ár 9999-1</button>
-        <button type="button" id="discount" #discount class="btn btn-secondary btn-sm mr-3" (click)="sortClick(discount.id)">Akciós</button>
-        <button type="button" id="featured" #featured class="btn btn-secondary btn-sm mr-3" (click)="sortClick(featured.id)">Kiemelt</button>
+        <button type="button" class="btn btn-secondary btn-sm  mr-3" (click)="sort('NameAZ')">Név A-z</button>
+        <button type="button" class="btn btn-secondary btn-sm mr-3" (click)="sort('NameZA')">Név Z-a</button>
+        <button type="button" class="btn btn-secondary btn-sm  mr-3" (click)="sort('Price19')">Ár 1-9999</button>
+        <button type="button" class="btn btn-secondary btn-sm mr-3" (click)="sort('Price91')">Ár 9999-1</button>
       </div>
     </div>
   </div>
@@ -26,7 +24,7 @@
           class="product-list__card"
           [cssClasses]="{ descriptor: 'p-4 p-lg-2 p-xl-3' }"
           [product]="item"
-          *ngFor="let item of products | filter:filterPhrase:['name', 'author', 'description', 'price']"
+          *ngFor="let item of products | filter:filterPhrase:['name', 'author', 'description', 'price'] | sort:sortType"
         ></app-product-card>
       </div>
     </div>
