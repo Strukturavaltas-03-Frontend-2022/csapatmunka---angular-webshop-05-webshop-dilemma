@@ -6,7 +6,7 @@
           <div class="col-md-4 text-center">
             <img class="img-fluid rounded" [src]="actualProduct.image" alt="..." />
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 d-flex flex-column">
             <div class="card-body">
               <h4 class="card-title">{{ actualProduct.name }}</h4>
               <div class="line"><hr /></div>
@@ -15,6 +15,12 @@
               <p class="card-text">{{ actualProduct.description }}</p>
               <p class="card-text">Raktáron: {{ actualProduct.stock }} db</p>
               <h5 class="card-text">Ár: {{ actualProduct.price }} Ft</h5>
+            </div>
+            <div class="mt-auto py-2 pr-3 cardfooter-color">
+              <button (click)="backTo()" class="float-right">
+                <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+                Vissza
+              </button>
             </div>
           </div>
         </div>

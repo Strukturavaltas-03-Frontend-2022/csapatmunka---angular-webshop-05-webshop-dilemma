@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { Category } from 'src/app/model/category';
@@ -24,8 +25,13 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private actR: ActivatedRoute,
+    private location: Location,
     private categoryService: CategoryService
   ) { }
+
+  backTo():void{
+    this.location.back()
+  }
 
   ngOnInit(): void {
   }
