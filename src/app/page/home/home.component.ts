@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductHandlerService } from 'src/app/product-handler.service';
+import { ProductHandlerService } from 'src/app/service/product-handler.service';
 
 @Component({
   selector: 'app-home',

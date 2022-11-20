@@ -130,26 +130,24 @@
               {{ product.discounted | trueFalse }}
             </div>
           </td>
-          <td class="row">
+          <td class="d-flex">
             <div *ngIf="product.id === editedId">
-              <button
-                class="btn btn-success"
-                (click)="save()"
-              >
+              <button class="btn btn-success" (click)="save(product)">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i>
               </button>
             </div>
+            <div *ngIf="product.id === editedId">
+              <button class="btn btn-secondary" (click)="cancel()">
+                <i class="fa fa-ban" aria-hidden="true"></i>
+              </button>
+            </div>
             <div *ngIf="product.id !== editedId">
-              <button class="btn btn-info">
-                <i
-                  (click)="edit(product)"
-                  class="fa fa-pencil"
-                  aria-hidden="true"
-                ></i>
+              <button class="btn btn-info" (click)="edit(product)">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
               </button>
             </div>
             <ng-container *ngIf="product.id !== editedId">
-              <button (click)="delete(product.id || -1)" class="btn btn-danger">
+              <button class="btn btn-danger" (click)="delete(product.id || -1)">
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
               </button>
             </ng-container>

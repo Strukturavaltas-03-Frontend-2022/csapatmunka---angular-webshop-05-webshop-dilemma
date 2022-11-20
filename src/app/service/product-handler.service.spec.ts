@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { ProductHandlerService } from './product-handler.service';
 
 describe('ProductHandlerService', () => {

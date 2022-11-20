@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from './model/product';
-import { ProductHandlerService } from './product-handler.service';
+import { ProductHandlerService } from './service/product-handler.service';
 
 @Component({
   selector: 'app-root',

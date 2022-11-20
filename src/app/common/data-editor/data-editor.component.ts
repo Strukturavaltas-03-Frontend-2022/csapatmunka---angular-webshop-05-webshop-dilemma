@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { ConfigService, ITableColumn } from 'src/app/service/config.service';
-import { ProductHandlerService } from 'src/app/product-handler.service';
+import { ProductHandlerService } from 'src/app/service/product-handler.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -21,16 +21,21 @@ export class DataEditorComponent {
     this.products = this.productSvc.products;
   }
 
-  save() {
-
+  save(product: Product) {
+    this.productSvc.modifyProduct(product);
+    this.editedId = -1;
   }
+
+  cancel() {
+    this.editedId = -1;
+ }
 
   edit(product: Product) {
     this.editedId = product.id || -1;
   }
 
   delete(productId: number): void{
-
+    this.productSvc.removeProduct(productId);
   }
 }
 

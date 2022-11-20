@@ -3,7 +3,7 @@ import { Location } from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
-import { ProductHandlerService } from 'src/app/product-handler.service';
+import { ProductHandlerService } from 'src/app/service/product-handler.service';
 import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
